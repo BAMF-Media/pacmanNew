@@ -1,0 +1,39 @@
+{
+  "name": "application",
+  "description": "Crowdist Game Server",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "game_style": "simpless -w -m \"./src/public/style/game.less\" -o \"build/styles/game.css\"",
+    "dashboard_style": "simpless -w -m \"./src/public/style/dashboard.less\" -o \"build/styles/dashboard.css\"",
+    "build": "webpack ./webpack.config.js -p",
+    "start": "webpack-dev-server ./webpack.config.js --content-base ./public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crowdist/Game.git"
+  },
+  "author": "Argonic (z.chabihi@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Crowdist/Game/issues"
+  },
+  "homepage": "https://github.com/Crowdist/Game#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "imgdye": "^1.0.1",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "simpless": "^3.1.0",
+    "style-loader": "^0.21.0",
+    "ts-loader": "4.0.1",
+    "typescript": "^2.8.3",
+    "webpack": "4.1.1",
+    "webpack-cli": "2.0.11",
+    "webpack-dev-server": "3.1.1"
+  }
+}

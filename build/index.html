@@ -1,0 +1,192 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/solid.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/brands.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css">
+        <link rel="stylesheet" href="styles/game.min.css">
+        <script src="scripts/game.js"></script>
+        <title>PacMeme by Drop</title>
+    </head>
+    <body style="background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(images/background.png);">
+        <div data-vl-widget=“milestoneWidget”></div>
+        <div class="game color-green">
+            <div class="controller">
+                <div class="time">
+                    time
+                    <span id="time">00:00:00.00</span>
+                </div>
+                <div class="lives" id="lives">
+                    <span>&#10084;</span>
+                    <span>&#10084;</span>
+                    <span>&#10084;</span>
+                </div>
+                <div class="score" id="score">
+                    0
+                </div>
+            </div>
+            <div class="bottom-controller">
+                <div class="fas fa-pause active"></div>
+                <div class="fas fa-sign-out-alt active"></div>
+                <div class="fas right fa-volume-up"></div>
+            </div>
+            <div id="game"></div>
+            <div class="offer">
+                <div class="media"></div>
+                <div class="text"></div>
+            </div>
+            <div class="window tfx">
+                <img src="images/comic.png">
+                <div class="text"></div>
+            </div>
+            <div class="window loading active">
+                <div class="container">
+                    <div class="caption">Loading game</div>
+                    <div class="progress">
+                        <div class="bar"><u></u></div>
+                        <span>0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="window connection">
+                <div class="popup">
+                    <img src="images/logo.png" alt="">
+                    <div class="button send"><i class="fab fa-facebook"></i>Login with Facebook</div>
+                </div>
+            </div>
+            <div class="window signup">
+                <div class="popup">
+                    <span class="title">Join the game</span>
+                    <label>
+                        <input type="text" class="email" />
+                        Your email
+                    </label>
+                    <div class="button send">Confirm email</div>
+                </div>
+            </div>
+            <div class="window menu">
+                <div class="popup">
+                    <div class="button start">Start playing</div>
+                    <div class="button options">Options</div>
+                    <div class="button leaderboard">Leaderboard</div>
+                    <div class="button logout">Logout</div>
+                </div>
+            </div>
+            <div class="window levels">
+                <div class="popup">
+                    <span class="title"><i class="close">❌</i>Choose a level</span>
+                    <div class="content">
+                        <div class="level clone">
+                            <span class="label">1</span>
+                            <span class="score"><u>125</u>Score</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="window next">
+                <div class="popup">
+                    <span class="title"><i class="close">❌</i>Level Completed</span>
+                    <div class="stats">
+                        <span class="label"><u class="score">125</u>Level score</span>
+                        <span class="label"><u class="lives">125</u>Lives</span>
+                        <span class="label"><u class="level">125</u>Level</span>
+                        <div class="time">
+                            <div class="button start">Next level</div>
+                            time
+                            <span>00:00:00.9</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="window options">
+                <div class="popup">
+                    <span class="title"><i class="close">❌</i>Game options</span>
+                    <label>
+                        <input type="range" class="volume" min="0" max="100" value="100" step="1" />
+                        Music volume
+                    </label>
+                </div>
+            </div>
+            <div class="window gameover">
+                <div class="container">
+                    <b>Game over</b>
+                    <i>:(</i>
+                    <div class="buttons">
+                        <div class="button start">Play again</div>
+                        <div class="button menu">Home menu</div>
+                    </div>
+                </div>
+            </div>
+            <div class="window stats">
+                <div class="popup">
+                    <span class="title"><i class="close">❌</i>Stats</span>
+                    <div class="user">
+                        <div class="media"></div>
+                        <span>Username</span>
+                        <u>regular</u>
+                    </div>
+                    <div class="stats">
+                        <span class="label"><u>125</u>Level score</span>
+                        <span class="label"><u>125</u>Overall score</span>
+                        <span class="label"><u>01:00:25</u>Total played</span>
+                    </div>
+                </div>
+            </div>
+            <div class="window leaderboard">
+                <div class="popup">
+                    <span class="title"><i class="close">❌</i>Leaderboard</span>
+                    <div class="scrollbar">
+                        <div class="user clone">
+                            <div class="media"></div>
+                            <span>Username</span>
+                            <u><i>1323</i>Score</u>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="window error-container">
+                <div class="popup">
+                    <span class="title"><i class="close">❌</i>Error</span>
+                    <div class="content">
+                        <div class="text"></div>
+                        <div class="button ok">Okay, got it!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="instructions">
+            <div><u><i>1</i>Step</u>Play PacMeme and Earn Cash Prizes</div>
+            <div><u><i>2</i>Step</u>Check your email for custom download link</div>
+            <div><u><i>3</i>Step</u>Redeem your rewards in the Drop app!</div>
+            <div><u><i>4</i>Step</u>Praise the Internet Gods - You got free money!</div>
+        </div>
+        <div class="partners">
+            <img src="images/partners/1.png" alt="">
+            <img src="images/partners/2.png" alt="">
+            <img src="images/partners/3.png" alt="">
+            <img src="images/partners/4.png" alt="">
+            <img src="images/partners/5.png" alt="">
+            <img src="images/partners/6.png" alt="">
+            <img src="images/partners/7.png" alt="">
+            <img src="images/partners/8.png" alt="">
+            <img src="images/partners/9.png" alt="">
+            <img src="images/partners/10.png" alt="">
+            <img src="images/partners/11.png" alt="">
+            <img src="images/partners/12.png" alt="">
+            <img src="images/partners/13.png" alt="">
+            <img src="images/partners/14.png" alt="">
+            <img src="images/partners/15.png" alt="">
+            <img src="images/partners/16.png" alt="">
+            <img src="images/partners/17.png" alt="">
+            <img src="images/partners/18.png" alt="">
+            <img src="images/partners/19.png" alt="">
+            <img src="images/partners/20.png" alt="">
+            <img src="images/partners/21.png" alt="">
+            <img src="images/partners/22.png" alt="">
+            <img src="images/partners/23.png" alt="">
+            <img src="images/partners/24.png" alt="">
+        </div>
+        <script>!function(){var a=window.VL=window.VL||{};return a.instances=a.instances||{},a.invoked?void(window.console&&console.error&&console.error("VL snippet loaded twice.")):(a.invoked=!0,void(a.load=function(b,c,d){var e={};e.publicToken=b,e.config=c||{};var f=document.createElement("script");f.type="text/javascript",f.id="vrlps-js",f.defer=!0,f.src="https://app.viral-loops.com/client/vl/vl.min.js";var g=document.getElementsByTagName("script")[0];return g.parentNode.insertBefore(f,g),f.onload=function(){a.setup(e),a.instances[b]=e},e.identify=e.identify||function(a,b){e.afterLoad={identify:{userData:a,cb:b}}},e.pendingEvents=[],e.track=e.track||function(a,b){e.pendingEvents.push({event:a,cb:b})},e.pendingHooks=[],e.addHook=e.addHook||function(a,b){e.pendingHooks.push({name:a,cb:b})},e.$=e.$||function(a){e.pendingHooks.push({name:"ready",cb:a})},e}))}();var campaign=VL.load("aO_3pK2tTPSUkoqGS78ZJ2MRKsY",{autoLoadWidgets:!0});</script>
+    </body>
+</html>

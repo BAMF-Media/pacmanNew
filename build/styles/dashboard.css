@@ -1,0 +1,944 @@
+/* line 7, /usr/share/nginx/html/game/src/style/dashboard.less */
+.scrollbar {
+  overflow: auto;
+}
+/* line 9, /usr/share/nginx/html/game/src/style/dashboard.less */
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+/* line 13, /usr/share/nginx/html/game/src/style/dashboard.less */
+.scrollbar::-webkit-scrollbar-track {
+  background-color: #1d2f3a;
+}
+/* line 17, /usr/share/nginx/html/game/src/style/dashboard.less */
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #37596d;
+}
+/* line 25, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form input[type=checkbox] {
+  background-color: #37596d;
+  height: 25px;
+  line-height: 25px;
+  width: 25px;
+  display: block;
+  text-align: center;
+  float: left;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  position: relative;
+  margin: 0;
+  margin-right: 10px;
+  -webkit-transition: all 0.2s linear;
+  font-size: 1rem;
+}
+/* line 41, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form input[type=checkbox]:after {
+  font-family: Font Awesome\ 5 Free;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-weight: 900;
+  content: "\f00c";
+  color: white;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+/* line 54, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form input[type=checkbox]:checked::after {
+  opacity: 1;
+}
+/* line 59, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form input[type=radio] {
+  background-color: #37596d;
+  height: 25px;
+  line-height: 25px;
+  width: 25px;
+  display: block;
+  text-align: center;
+  float: left;
+  -webkit-appearance: none;
+  border-radius: 25px;
+  position: relative;
+  margin: 0;
+  margin-right: 10px;
+  -webkit-transition: all 0.2s linear;
+  font-size: 1.5rem;
+}
+/* line 75, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form input[type=radio]:after {
+  transition: all 0.2s linear;
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0;
+}
+/* line 88, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form input[type=radio]:checked::after {
+  opacity: 1;
+}
+/* line 93, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form input[type=range] {
+  -webkit-appearance: none;
+  width: 50% !important;
+  height: 5px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 11.5px 0;
+}
+/* line 101, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+/* line 108, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form label {
+  display: block;
+  margin-bottom: 10px;
+  line-height: 25px;
+}
+/* line 113, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form input[type=text],
+.form input[type=number],
+.form select {
+  height: 25px;
+  border: 1px solid #37596d;
+  background: #37596d;
+  color: white;
+  padding: 0 20px;
+  border-radius: 5px 5px 5px 5px;
+}
+/* line 121, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form label input:not([type=checkbox]):not([type=radio]) {
+  width: 60%;
+  float: right;
+}
+/* line 125, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form select {
+  width: 40% !important;
+  margin-right: 20%;
+  float: right;
+}
+/* line 130, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form label input[type=checkbox],
+.form label input[type=radio] {
+  margin-left: 40%;
+}
+/* line 134, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form .value {
+  width: 10%;
+  float: right;
+  text-align: right;
+}
+/* line 139, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form button {
+  line-height: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px 5px 5px 5px;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+  border: 0;
+  color: #263d4b;
+  width: 100%;
+}
+/* line 149, /usr/share/nginx/html/game/src/style/dashboard.less */
+.form button.secondary {
+  background-color: #37596d;
+  color: white;
+}
+/* line 156, /usr/share/nginx/html/game/src/style/dashboard.less */
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 100%;
+  color: white;
+  background-color: #263d4b;
+}
+/* line 166, /usr/share/nginx/html/game/src/style/dashboard.less */
+a {
+  text-decoration: none;
+  color: white;
+}
+/* line 170, /usr/share/nginx/html/game/src/style/dashboard.less */
+#root {
+  height: 100%;
+}
+/* line 174, /usr/share/nginx/html/game/src/style/dashboard.less */
+.connection {
+  background-color: transparent !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+/* line 181, /usr/share/nginx/html/game/src/style/dashboard.less */
+.connection.active {
+  display: block;
+}
+/* line 184, /usr/share/nginx/html/game/src/style/dashboard.less */
+.connection img {
+  width: 300px;
+  -webkit-filter: brightness(0%) invert();
+}
+/* line 188, /usr/share/nginx/html/game/src/style/dashboard.less */
+.connection .button {
+  background-color: #0f61cc;
+  color: white;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px 5px 5px 5px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 198, /usr/share/nginx/html/game/src/style/dashboard.less */
+.connection .button:hover {
+  opacity: 0.7;
+}
+/* line 201, /usr/share/nginx/html/game/src/style/dashboard.less */
+.connection .button .fab {
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 207, /usr/share/nginx/html/game/src/style/dashboard.less */
+.header {
+  background: #1d2f3a;
+  line-height: 60px;
+  height: 60px;
+  padding: 0 30px;
+}
+/* line 212, /usr/share/nginx/html/game/src/style/dashboard.less */
+.header .logo {
+  float: left;
+  text-transform: uppercase;
+}
+/* line 216, /usr/share/nginx/html/game/src/style/dashboard.less */
+.header .button {
+  float: right;
+  padding: 0 20px;
+  margin: 10px 0;
+  border-radius: 5px 5px 5px 5px;
+  background-color: #2f4b5c;
+  line-height: 40px;
+  cursor: pointer;
+}
+/* line 224, /usr/share/nginx/html/game/src/style/dashboard.less */
+.header .button i {
+  margin-right: 10px;
+}
+/* line 229, /usr/share/nginx/html/game/src/style/dashboard.less */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  border-right: 1px solid #37596d;
+}
+/* line 236, /usr/share/nginx/html/game/src/style/dashboard.less */
+.sidebar a {
+  line-height: 50px;
+  padding: 0 30px;
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* line 241, /usr/share/nginx/html/game/src/style/dashboard.less */
+.sidebar a.active {
+  background-color: #37596d;
+  color: white;
+}
+/* line 245, /usr/share/nginx/html/game/src/style/dashboard.less */
+.sidebar a i {
+  margin-right: 10px;
+}
+/* line 250, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph {
+  border: 1px solid #37596d;
+  border-radius: 5px 5px 5px 5px;
+  overflow: hidden;
+  margin: 30px 0;
+}
+/* line 255, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .title {
+  line-height: 40px;
+  padding: 20px 30px;
+  overflow: hidden;
+  border-bottom: 1px solid #37596d;
+}
+/* line 260, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .title select {
+  float: right;
+  color: white;
+  height: 40px;
+  padding: 0 30px;
+  border: 0;
+  background-color: #37596d;
+  border-radius: 5px 5px 5px 5px;
+}
+/* line 270, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .content {
+  padding: 30px 30px 20px;
+  overflow: hidden;
+}
+/* line 273, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .content .side {
+  width: 20%;
+  float: right;
+  text-align: center;
+}
+/* line 277, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .content .side .number {
+  font-size: 5rem;
+  font-weight: 100;
+  text-align: center;
+  line-height: 5rem;
+}
+/* line 283, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .content .side span {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 20px;
+}
+/* line 288, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .content .side .double {
+  margin-top: 150px;
+  overflow: hidden;
+}
+/* line 291, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .content .side .double div {
+  float: left;
+  width: 50%;
+}
+/* line 294, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .content .side .double div i {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 10px;
+  font-style: normal;
+}
+/* line 300, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graph .content .side .double div u {
+  text-decoration: none;
+  opacity: 0.5;
+  display: block;
+}
+/* line 309, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable {
+  display: table;
+  width: 70%;
+  float: left;
+}
+/* line 313, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable .heading {
+  border-top: 0;
+  display: table-row;
+}
+/* line 316, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable .heading .column {
+  line-height: 30px;
+  display: table-cell;
+  text-align: center;
+}
+/* line 322, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable > .row {
+  display: table-row;
+  transition: opacity 0.2s linear;
+}
+/* line 325, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable > .row:hover {
+  opacity: 1;
+}
+/* line 328, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable > .row a {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+}
+/* line 332, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable > .row .column {
+  line-height: 30px;
+  display: table-cell;
+  text-align: center;
+}
+/* line 337, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable > .row .progress {
+  border: 1px solid #37596d;
+  display: block;
+  border-radius: 2px;
+}
+/* line 341, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable > .row .progress u {
+  display: block;
+  text-decoration: none;
+  height: 10px;
+  background-color: #37596d;
+  transition: width 0.2s linear;
+}
+/* line 350, /usr/share/nginx/html/game/src/style/dashboard.less */
+.graphTable > .row:last-child > .column {
+  padding-bottom: 10px;
+}
+/* line 357, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor {
+  height: 100%;
+}
+/* line 359, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas {
+  height: 100%;
+  position: relative;
+}
+/* line 362, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .bar {
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+  border-right: 1px solid #37596d;
+}
+/* line 368, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .controllers {
+  width: 300px;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-left: 1px solid #37596d;
+}
+/* line 377, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .draw {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 300px;
+  left: 250px;
+}
+/* line 384, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 389, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .map .tileset {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  float: left;
+  border: 1px solid #2f4b5c;
+  border-bottom: 0;
+  border-right: 0;
+}
+/* line 398, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .map .vr {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: #2f4b5c;
+  width: 2px;
+  margin-left: -2px;
+  pointer-events: none;
+}
+/* line 407, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .map .hr {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #2f4b5c;
+  height: 2px;
+  margin-top: -2px;
+  pointer-events: none;
+}
+/* line 417, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .wall {
+  background-color: #FFF !important;
+}
+/* line 420, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .house {
+  background-color: #368ff4 !important;
+}
+/* line 423, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .walkable {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+/* line 426, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .dash {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+/* line 429, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .box {
+  background-color: #F44336 !important;
+}
+/* line 432, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .canvas .tile .media.empty,
+.editor .canvas .tileset.empty {
+  background-color: #48748f !important;
+}
+/* line 438, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .entities .empty {
+  line-height: 100px;
+  text-align: center;
+}
+/* line 442, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .entities .form .form {
+  background: #263d4b;
+  padding: 20px;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 10px;
+}
+/* line 447, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .entities .form .form button {
+  opacity: 0.7;
+}
+/* line 452, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .panel {
+  border: 1px solid #37596d;
+  border-radius: 5px 5px 5px 5px;
+  margin-bottom: 20px;
+}
+/* line 456, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .panel-title {
+  border-bottom: 1px solid #37596d;
+  line-height: 50px;
+  padding: 0 20px;
+}
+/* line 461, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .panel-content {
+  padding: 20px;
+}
+/* line 464, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .panel input[type=number],
+.editor .panel input[type=text] {
+  width: 40% !important;
+}
+/* line 467, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .panel .tile {
+  background: #37596d;
+  border-radius: 5px 5px 5px 5px;
+  padding: 10px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* line 475, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .panel .tile.active {
+  border: 2px solid #FFF;
+  padding: 8px;
+}
+/* line 479, /usr/share/nginx/html/game/src/style/dashboard.less */
+.editor .panel .tile .media {
+  height: 30px;
+  width: 30px;
+  float: left;
+  margin-right: 20px;
+  border-radius: 2px 2px 2px 2px;
+  background-color: #FFF;
+}
+/* line 490, /usr/share/nginx/html/game/src/style/dashboard.less */
+.pagination {
+  overflow: hidden;
+  margin: 20px 0;
+}
+/* line 493, /usr/share/nginx/html/game/src/style/dashboard.less */
+.pagination i,
+.pagination span {
+  line-height: 40px;
+  width: 50px;
+  text-align: center;
+  float: right;
+  display: block;
+  margin-left: 10px;
+}
+/* line 501, /usr/share/nginx/html/game/src/style/dashboard.less */
+.pagination i {
+  background-color: #37596d;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+/* line 505, /usr/share/nginx/html/game/src/style/dashboard.less */
+.pagination i:hover {
+  opacity: 0.7;
+}
+/* line 510, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page {
+  position: fixed;
+  top: 60px;
+  left: 250px;
+  bottom: 0;
+  right: 0;
+  padding: 30px;
+  padding-top: 0;
+}
+/* line 518, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .page-title {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 70px;
+}
+/* line 522, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .page-title .button {
+  display: inline-block;
+  line-height: 50px;
+  padding: 0 30px;
+  border-radius: 5px 5px 5px 5px;
+  background: #37596d;
+  color: white;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+/* line 532, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .page-title .button:hover {
+  opacity: 0.7;
+}
+/* line 536, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .page-title u {
+  float: right;
+  font-size: 1rem;
+}
+/* line 541, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .filters {
+  padding: 30px;
+  border: 1px solid #2f4b5c;
+  border-radius: 5px 5px 5px 5px;
+  margin: 30px 0;
+  overflow: hidden;
+}
+/* line 548, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .filter {
+  float: left;
+  width: 50%;
+}
+/* line 552, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .stats {
+  width: 31.33333333%;
+  margin: 0 1%;
+  float: left;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #37596d;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/* line 553, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .stats-container {
+  overflow: hidden;
+  margin: 0 -1%;
+}
+/* line 564, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .stats .name {
+  line-height: 50px;
+  padding: 0 30px;
+  background-color: #37596d;
+}
+/* line 568, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .stats .name .fas {
+  float: left;
+  margin-right: 10px;
+  line-height: 50px;
+}
+/* line 574, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .stats .lists {
+  padding: 30px;
+  border-top: 1px solid #37596d;
+}
+/* line 577, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .stats .lists .label {
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* line 580, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .stats .lists .label u {
+  float: right;
+  text-decoration: none;
+  display: block;
+  color: white;
+}
+/* line 589, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table {
+  display: table;
+  width: 100%;
+}
+/* line 592, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table-empty {
+  display: block;
+  line-height: 100px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #37596d;
+  text-align: center;
+}
+/* line 599, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .column {
+  display: table-cell;
+  line-height: 40px;
+  padding: 0 20px;
+  vertical-align: middle;
+}
+/* line 605, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .rows {
+  display: table-row-group;
+}
+/* line 607, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .rows > .row {
+  display: table-row;
+}
+/* line 609, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .rows > .row > .column {
+  line-height: 60px;
+  border: 1px solid #37596d;
+  border-top: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* line 616, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .rows > .row > .column:last-child {
+  border-right-width: 1px;
+}
+/* line 619, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .rows > .row > .column:first-child {
+  border-left-width: 1px;
+}
+/* line 624, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .rows > .row:last-child > .column:first-child {
+  border-radius: 0 0 0 5px;
+}
+/* line 627, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .rows > .row:last-child > .column:last-child {
+  border-radius: 0 0 5px 0;
+}
+/* line 633, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .head {
+  display: table-row;
+}
+/* line 635, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .head > .column {
+  background: #37596d;
+}
+/* line 637, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .head > .column:first-child {
+  border-radius: 5px 0 0 0;
+}
+/* line 640, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .head > .column:last-child {
+  border-radius: 0 5px 0 0;
+}
+/* line 645, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .options {
+  text-align: center;
+}
+/* line 648, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .button {
+  line-height: 40px;
+  display: inline-block;
+  padding: 0 20px;
+  text-align: center;
+  background-color: #37596d;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+/* line 657, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .button:hover {
+  opacity: 0.5;
+}
+/* line 661, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .column .user {
+  height: 40px;
+  width: 200px;
+}
+/* line 664, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .column .user .media {
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin-right: 10px;
+  background-color: #2f4b5c;
+  border-radius: 2px 2px 2px 2px;
+}
+/* line 672, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .column .user u,
+.page .table .column .user span {
+  display: block;
+  line-height: 20px;
+}
+/* line 676, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .column .user u {
+  text-decoration: none;
+  color: white;
+}
+/* line 680, /usr/share/nginx/html/game/src/style/dashboard.less */
+.page .table .column .user i {
+  font-style: normal;
+  float: right;
+}
+/* line 687, /usr/share/nginx/html/game/src/style/dashboard.less */
+.window {
+  background: rgba(38, 61, 75, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* line 694, /usr/share/nginx/html/game/src/style/dashboard.less */
+.window .popup {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 5px 5px 5px 5px;
+  overflow: hidden;
+}
+/* line 701, /usr/share/nginx/html/game/src/style/dashboard.less */
+.window .popup.fullscreen {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 0 0;
+}
+/* line 705, /usr/share/nginx/html/game/src/style/dashboard.less */
+.window .popup.fullscreen .content {
+  height: calc(100% - 60px);
+  max-height: initial;
+  overflow: hidden;
+}
+/* line 711, /usr/share/nginx/html/game/src/style/dashboard.less */
+.window .popup .toolbar {
+  line-height: 41px;
+  background-color: #2f4b5c;
+  border-bottom: 1px solid #37596d;
+  padding: 10px 30px;
+}
+/* line 716, /usr/share/nginx/html/game/src/style/dashboard.less */
+.window .popup .toolbar .button {
+  display: inline-block;
+  line-height: 40px;
+  padding: 0 30px;
+  border-radius: 5px 5px 5px 5px;
+  background: #37596d;
+  color: white;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+/* line 726, /usr/share/nginx/html/game/src/style/dashboard.less */
+.window .popup .toolbar .button:hover {
+  opacity: 0.7;
+}
+/* line 730, /usr/share/nginx/html/game/src/style/dashboard.less */
+.window .popup .toolbar i {
+  float: right;
+  line-height: 41px;
+  cursor: pointer;
+}
+/* line 736, /usr/share/nginx/html/game/src/style/dashboard.less */
+.window .popup .content {
+  background-color: #2f4b5c;
+  min-height: 300px;
+  max-height: 80vh;
+}
+/* line 743, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer {
+  width: 700px;
+  padding: 30px;
+  margin-top: 1px;
+  height: 500px;
+}
+/* line 748, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .buttons {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+/* line 751, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .buttons select,
+.viewer .buttons .button {
+  height: 50px;
+  line-height: 50px;
+  border-radius: 5px 5px 5px 5px;
+  padding: 0 30px;
+}
+/* line 757, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .buttons select {
+  border: 1px solid #37596d;
+  color: white;
+  background-color: transparent;
+  float: left;
+  margin-right: 10px;
+}
+/* line 764, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .buttons .button {
+  float: right;
+  margin-left: 10px;
+  background-color: #37596d;
+  cursor: pointer;
+}
+/* line 769, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .buttons .button.cancel {
+  background-color: #263d4b;
+}
+/* line 772, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .buttons .button.disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+/* line 779, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .sections {
+  overflow: hidden;
+  border: 0;
+}
+/* line 782, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .sections .section {
+  margin-bottom: 20px;
+  border: 1px solid #37596d;
+  border-radius: 5px 5px 5px 5px;
+  padding: 20px 30px;
+}
+/* line 787, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .sections .section.wide {
+  width: 100%;
+  margin: 0;
+}
+/* line 791, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .sections .section .section-title {
+  margin-bottom: 30px;
+}
+/* line 794, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .sections .section .label {
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
+  overflow: hidden;
+}
+/* line 799, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .sections .section .label i {
+  float: right;
+  font-style: normal;
+  color: white;
+  width: 70%;
+  padding-left: 50px;
+  text-align: left;
+}
+/* line 809, /usr/share/nginx/html/game/src/style/dashboard.less */
+.viewer .sections .paragraph {
+  display: block;
+  float: left;
+  margin-top: 50px;
+  color: white;
+  width: 100%;
+  line-height: 1.5rem;
+}

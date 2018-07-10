@@ -1,0 +1,20 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "build",
+      "sourceMap": true,
+      "allowJs": false,
+      "checkJs": false,
+      "pretty": true,
+      "jsx": "react",
+      "esModuleInterop": true,
+    },
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+}

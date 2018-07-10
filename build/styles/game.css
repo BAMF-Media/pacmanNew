@@ -1,0 +1,826 @@
+@import url('https://fonts.googleapis.com/css?family=Teko');
+@font-face {
+  font-family: Comic;
+  src: url(assets/_cdde1fc553b81809dd3144d91cde9b73_comic.ttf);
+}
+/* line 8, /usr/share/nginx/html/game/src/style/game.less */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 14, /usr/share/nginx/html/game/src/style/game.less */
+body {
+  font-family: Teko;
+  font-size: 20;
+  text-align: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* line 71, /usr/share/nginx/html/game/src/style/game.less */
+.color-green,
+.color-red,
+.color-blue {
+  background-color: rgba(51, 66, 96, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 25, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .scrollbar::-webkit-scrollbar-track,
+.color-red .scrollbar::-webkit-scrollbar-track,
+.color-blue .scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(86, 112, 163, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 29, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .scrollbar::-webkit-scrollbar-thumb,
+.color-red .scrollbar::-webkit-scrollbar-thumb,
+.color-blue .scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(33, 43, 63, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 33, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .window,
+.color-red .window,
+.color-blue .window {
+  background: rgba(51, 66, 96, 0.8);
+}
+/* line 35, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .window .button,
+.color-red .window .button,
+.color-blue .window .button {
+  background: white;
+  color: rgba(51, 66, 96, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 40, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .window .popup,
+.color-red .window .popup,
+.color-blue .window .popup {
+  background: rgba(69, 89, 129, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 43, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .window .popup .title,
+.color-red .window .popup .title,
+.color-blue .window .popup .title {
+  background-color: rgba(42, 55, 79, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 47, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .window .popup .progress .bar,
+.color-red .window .popup .progress .bar,
+.color-blue .window .popup .progress .bar {
+  background: rgba(69, 89, 129, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 51, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .window .popup .button,
+.color-red .window .popup .button,
+.color-blue .window .popup .button,
+.color-green .window .popup .level .label,
+.color-red .window .popup .level .label,
+.color-blue .window .popup .level .label {
+  color: rgba(51, 66, 96, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 55, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .window .popup .user .media,
+.color-red .window .popup .user .media,
+.color-blue .window .popup .user .media {
+  background: rgba(51, 66, 96, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 60, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .window.leaderboard .user,
+.color-red .window.leaderboard .user,
+.color-blue .window.leaderboard .user {
+  border-bottom: 2px solid rgba(69, 89, 129, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 64, /usr/share/nginx/html/game/src/style/game.less */
+.color-green .window .scrollbar,
+.color-red .window .scrollbar,
+.color-blue .window .scrollbar {
+  background: rgba(60, 77, 113, 0.8);
+  transition: all 0.2s linear;
+}
+/* line 76, /usr/share/nginx/html/game/src/style/game.less */
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+/* line 81, /usr/share/nginx/html/game/src/style/game.less */
+.clone {
+  display: none;
+}
+/* line 84, /usr/share/nginx/html/game/src/style/game.less */
+.locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+/* line 88, /usr/share/nginx/html/game/src/style/game.less */
+.offer {
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transition: all 0.2s linear;
+  transform: translate(-50%, -200px);
+  line-height: 50px;
+  background: rgba(151, 167, 200, 0.8);
+  border-radius: 5px;
+  color: white;
+  width: 300px;
+  padding: 10px;
+}
+/* line 100, /usr/share/nginx/html/game/src/style/game.less */
+.offer.active {
+  transform: translate(-50%, 0);
+}
+/* line 103, /usr/share/nginx/html/game/src/style/game.less */
+.offer .media {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 20px;
+  background-color: #FFF;
+  border-radius: 3px;
+  background-size: cover;
+  background-position: center;
+}
+/* line 114, /usr/share/nginx/html/game/src/style/game.less */
+.window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.2s linear;
+  transform: scale(1.3);
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 10px;
+}
+/* line 125, /usr/share/nginx/html/game/src/style/game.less */
+.window .container {
+  padding-bottom: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  color: white;
+}
+/* line 134, /usr/share/nginx/html/game/src/style/game.less */
+.window .popup {
+  padding: 30px;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  padding-top: 10px;
+  color: white;
+}
+/* line 144, /usr/share/nginx/html/game/src/style/game.less */
+.window .popup .title {
+  min-width: 300px;
+  text-align: center;
+  line-height: 50px;
+  display: block;
+  color: white;
+  margin: -10px -30px 20px;
+  position: relative;
+}
+/* line 152, /usr/share/nginx/html/game/src/style/game.less */
+.window .popup .title .close {
+  width: 50px;
+  display: block;
+  cursor: pointer;
+  font-style: normal;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 160, /usr/share/nginx/html/game/src/style/game.less */
+.window .popup .title .close:hover {
+  opacity: 0.7;
+}
+/* line 166, /usr/share/nginx/html/game/src/style/game.less */
+.window.active {
+  pointer-events: initial;
+  opacity: 1;
+  transform: scale(1);
+}
+/* line 171, /usr/share/nginx/html/game/src/style/game.less */
+.window.tfx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+/* line 178, /usr/share/nginx/html/game/src/style/game.less */
+.window.tfx img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  -webkit-filter: hue-rotate(-130deg) saturate(50%);
+}
+@keyframes rotate {
+  /* line 187, /usr/share/nginx/html/game/src/style/game.less */
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+/* line 192, /usr/share/nginx/html/game/src/style/game.less */
+.window.tfx .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0) scale(1);
+  color: white;
+  font-size: 8rem;
+  font-family: Comic;
+  animation: shake 5s linear infinite;
+}
+@keyframes shake {
+  /* line 202, /usr/share/nginx/html/game/src/style/game.less */
+  33% {
+    transform: translate(-50%, -50%) rotate(-30deg) scale(1.3);
+  }
+  /* line 205, /usr/share/nginx/html/game/src/style/game.less */
+  50% {
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+  }
+  /* line 208, /usr/share/nginx/html/game/src/style/game.less */
+  66% {
+    transform: translate(-50%, -50%) rotate(30deg) scale(1.3);
+  }
+}
+/* line 215, /usr/share/nginx/html/game/src/style/game.less */
+.window.loading .caption {
+  margin-bottom: 20px;
+}
+/* line 218, /usr/share/nginx/html/game/src/style/game.less */
+.window.loading .progress {
+  overflow: hidden;
+}
+/* line 220, /usr/share/nginx/html/game/src/style/game.less */
+.window.loading .progress .bar {
+  overflow: hidden;
+  width: 80%;
+  float: left;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.2);
+}
+/* line 226, /usr/share/nginx/html/game/src/style/game.less */
+.window.loading .progress .bar u {
+  display: block;
+  height: 10px;
+  background-color: white;
+}
+/* line 232, /usr/share/nginx/html/game/src/style/game.less */
+.window.loading .progress span {
+  float: right;
+  width: 20%;
+  text-align: right;
+  line-height: 10px;
+  font-size: 1rem;
+}
+/* line 242, /usr/share/nginx/html/game/src/style/game.less */
+.window.menu .popup {
+  overflow: visible;
+  padding-top: 20px;
+}
+/* line 246, /usr/share/nginx/html/game/src/style/game.less */
+.window.menu img {
+  width: 200px;
+  -webkit-filter: brightness(0) invert(100%);
+  margin-top: -110px;
+}
+/* line 251, /usr/share/nginx/html/game/src/style/game.less */
+.window.menu .button {
+  line-height: 50px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  width: 200px;
+  transition: all 0.2s linear;
+}
+/* line 260, /usr/share/nginx/html/game/src/style/game.less */
+.window.menu .button:hover {
+  opacity: 0.7;
+}
+/* line 266, /usr/share/nginx/html/game/src/style/game.less */
+.window.connection .button,
+.window.error-container .button {
+  line-height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.2s linear;
+  min-width: 200px;
+  margin-top: 20px;
+}
+/* line 275, /usr/share/nginx/html/game/src/style/game.less */
+.window.connection .button:hover,
+.window.error-container .button:hover {
+  opacity: 0.7;
+}
+/* line 281, /usr/share/nginx/html/game/src/style/game.less */
+.window.connection .popup {
+  background-color: transparent !important;
+}
+/* line 283, /usr/share/nginx/html/game/src/style/game.less */
+.window.connection .popup img {
+  width: 300px;
+  -webkit-filter: brightness(0%) invert();
+}
+/* line 287, /usr/share/nginx/html/game/src/style/game.less */
+.window.connection .popup .button {
+  background-color: #0f61cc;
+  color: white;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* line 293, /usr/share/nginx/html/game/src/style/game.less */
+.window.connection .popup .button .fab {
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 301, /usr/share/nginx/html/game/src/style/game.less */
+.window.stats .user {
+  margin-bottom: 30px;
+  color: white;
+  overflow: hidden;
+  line-height: 20px;
+  text-align: left;
+}
+/* line 307, /usr/share/nginx/html/game/src/style/game.less */
+.window.stats .user .media {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 20px;
+}
+/* line 313, /usr/share/nginx/html/game/src/style/game.less */
+.window.stats .user span {
+  display: block;
+}
+/* line 316, /usr/share/nginx/html/game/src/style/game.less */
+.window.stats .user u {
+  display: block;
+  text-decoration: none;
+  font-size: 1rem;
+}
+/* line 323, /usr/share/nginx/html/game/src/style/game.less */
+.window.stats .stats .label {
+  display: block;
+  color: white;
+  text-align: left;
+  overflow: hidden;
+}
+/* line 328, /usr/share/nginx/html/game/src/style/game.less */
+.window.stats .stats .label u {
+  width: 30%;
+  float: right;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  text-align: right;
+}
+/* line 339, /usr/share/nginx/html/game/src/style/game.less */
+.window.leaderboard .user {
+  line-height: 20px;
+  color: white;
+  overflow: hidden;
+  text-align: left;
+  padding: 20px;
+}
+/* line 345, /usr/share/nginx/html/game/src/style/game.less */
+.window.leaderboard .user .media {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 20px;
+}
+/* line 351, /usr/share/nginx/html/game/src/style/game.less */
+.window.leaderboard .user span {
+  display: block;
+  line-height: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+/* line 357, /usr/share/nginx/html/game/src/style/game.less */
+.window.leaderboard .user u {
+  display: block;
+  text-decoration: none;
+  font-size: 1rem;
+}
+/* line 361, /usr/share/nginx/html/game/src/style/game.less */
+.window.leaderboard .user u i {
+  font-style: normal;
+  float: right;
+}
+/* line 367, /usr/share/nginx/html/game/src/style/game.less */
+.window.leaderboard .scrollbar {
+  border-radius: 5px;
+  height: 200px;
+  overflow: auto;
+}
+/* line 374, /usr/share/nginx/html/game/src/style/game.less */
+.window.gameover b {
+  font-size: 2rem;
+  display: block;
+}
+/* line 379, /usr/share/nginx/html/game/src/style/game.less */
+.window.gameover i {
+  font-size: 10rem;
+  transform: rotate(90deg);
+  display: block;
+  font-style: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1em;
+  margin-left: 40px;
+}
+/* line 388, /usr/share/nginx/html/game/src/style/game.less */
+.window.gameover .button {
+  margin: 0 auto;
+  line-height: 50px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+  cursor: pointer;
+  width: 200px;
+  transition: all 0.2s linear;
+}
+/* line 397, /usr/share/nginx/html/game/src/style/game.less */
+.window.gameover .button:hover {
+  opacity: 0.7;
+}
+/* line 400, /usr/share/nginx/html/game/src/style/game.less */
+.window.gameover .button.start {
+  background-color: white;
+  line-height: 60px;
+}
+/* line 408, /usr/share/nginx/html/game/src/style/game.less */
+.window.next .stats .label {
+  display: block;
+  color: white;
+  text-align: left;
+  overflow: hidden;
+}
+/* line 413, /usr/share/nginx/html/game/src/style/game.less */
+.window.next .stats .label u {
+  width: 30%;
+  float: right;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  text-align: right;
+}
+/* line 421, /usr/share/nginx/html/game/src/style/game.less */
+.window.next .stats .button {
+  line-height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  width: 120px;
+  transition: all 0.2s linear;
+  float: right;
+}
+/* line 429, /usr/share/nginx/html/game/src/style/game.less */
+.window.next .stats .button:hover {
+  opacity: 0.7;
+}
+/* line 433, /usr/share/nginx/html/game/src/style/game.less */
+.window.next .stats .time {
+  line-height: 1rem;
+  text-align: left;
+  color: white;
+  margin-top: 50px;
+}
+/* line 438, /usr/share/nginx/html/game/src/style/game.less */
+.window.next .stats .time span {
+  display: block;
+  font-size: 1.5rem;
+}
+/* line 446, /usr/share/nginx/html/game/src/style/game.less */
+.window.options input[type=checkbox],
+.window.signup input[type=checkbox] {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 25px;
+  line-height: 25px;
+  width: 25px;
+  display: block;
+  text-align: center;
+  float: left;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  position: relative;
+  margin: 0;
+  margin-right: 10px;
+  -webkit-transition: all 0.2s linear;
+  font-size: 1rem;
+}
+/* line 462, /usr/share/nginx/html/game/src/style/game.less */
+.window.options input[type=checkbox]:after,
+.window.signup input[type=checkbox]:after {
+  content: '\2713';
+  color: white;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+/* line 469, /usr/share/nginx/html/game/src/style/game.less */
+.window.options input[type=checkbox]:checked::after,
+.window.signup input[type=checkbox]:checked::after {
+  opacity: 1;
+}
+/* line 474, /usr/share/nginx/html/game/src/style/game.less */
+.window.options input[type=text],
+.window.signup input[type=text] {
+  -webkit-appearance: none;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 25px;
+  border-radius: 5px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border: 0;
+  font-family: Teko;
+  color: white;
+}
+/* line 486, /usr/share/nginx/html/game/src/style/game.less */
+.window.options input[type=range],
+.window.signup input[type=range] {
+  -webkit-appearance: none;
+  height: 5px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 11.5px 0;
+}
+/* line 493, /usr/share/nginx/html/game/src/style/game.less */
+.window.options input[type=range]::-webkit-slider-thumb,
+.window.signup input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+/* line 500, /usr/share/nginx/html/game/src/style/game.less */
+.window.options label,
+.window.signup label {
+  display: block;
+  margin-bottom: 10px;
+  line-height: 25px;
+  text-align: left;
+}
+/* line 506, /usr/share/nginx/html/game/src/style/game.less */
+.window.options label input:not([type=checkbox]):not([type=radio]),
+.window.signup label input:not([type=checkbox]):not([type=radio]) {
+  width: 60%;
+  float: right;
+}
+/* line 510, /usr/share/nginx/html/game/src/style/game.less */
+.window.options label input[type=checkbox],
+.window.signup label input[type=checkbox],
+.window.options label input[type=radio],
+.window.signup label input[type=radio] {
+  margin-left: 40%;
+}
+/* line 513, /usr/share/nginx/html/game/src/style/game.less */
+.window.options .button,
+.window.signup .button {
+  line-height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+/* line 519, /usr/share/nginx/html/game/src/style/game.less */
+.window.options .button:hover,
+.window.signup .button:hover {
+  opacity: 0.7;
+}
+/* line 525, /usr/share/nginx/html/game/src/style/game.less */
+.window.levels .level {
+  width: 33.33333333%;
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+/* line 532, /usr/share/nginx/html/game/src/style/game.less */
+.window.levels .level:hover {
+  opacity: 0.7;
+}
+/* line 535, /usr/share/nginx/html/game/src/style/game.less */
+.window.levels .level .label {
+  line-height: 80px;
+  text-align: center;
+  font-size: 2rem;
+  display: block;
+  border-radius: 5px;
+  background: white;
+}
+/* line 543, /usr/share/nginx/html/game/src/style/game.less */
+.window.levels .level .score {
+  display: block;
+  color: white;
+  text-align: left;
+  overflow: hidden;
+  font-size: 1rem;
+}
+/* line 549, /usr/share/nginx/html/game/src/style/game.less */
+.window.levels .level .score u {
+  width: 30%;
+  float: right;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  text-align: right;
+}
+/* line 560, /usr/share/nginx/html/game/src/style/game.less */
+.logo {
+  width: 300px;
+}
+/* line 563, /usr/share/nginx/html/game/src/style/game.less */
+.partners {
+  margin: 100px auto 0;
+  padding: 0 100px;
+  background-color: #FFF;
+  height: 800px;
+  position: relative;
+}
+/* line 569, /usr/share/nginx/html/game/src/style/game.less */
+.partners::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), white);
+}
+/* line 578, /usr/share/nginx/html/game/src/style/game.less */
+.partners img {
+  width: 13.38461538%;
+  margin: 20px 1%;
+  border: 1px solid #CCC;
+  -webkit-filter: grayscale(100%);
+  float: left;
+  border-radius: 5px;
+}
+/* line 587, /usr/share/nginx/html/game/src/style/game.less */
+.instructions {
+  width: 500px;
+  margin: 0 auto 50px;
+}
+/* line 591, /usr/share/nginx/html/game/src/style/game.less */
+.instructions span {
+  color: #4ee09c;
+  display: block;
+  margin-bottom: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+/* line 599, /usr/share/nginx/html/game/src/style/game.less */
+.instructions div {
+  line-height: 25px;
+  margin-top: 10px;
+  color: #999;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+/* line 607, /usr/share/nginx/html/game/src/style/game.less */
+.instructions div u {
+  text-decoration: none;
+  width: 17%;
+  float: left;
+  padding-right: 30px;
+  color: #4ee09c;
+}
+/* line 613, /usr/share/nginx/html/game/src/style/game.less */
+.instructions div u i {
+  display: block;
+  float: right;
+  border-radius: 50%;
+  width: 25px;
+  text-align: center;
+  color: white;
+  background-color: #4ee09c;
+  font-style: normal;
+}
+/* line 626, /usr/share/nginx/html/game/src/style/game.less */
+.game {
+  border-radius: 10px;
+  width: 520px;
+  padding: 30px;
+  margin: 100px auto 50px;
+  position: relative;
+  overflow: hidden;
+}
+/* line 633, /usr/share/nginx/html/game/src/style/game.less */
+.game #game {
+  position: relative;
+  min-height: 350px;
+}
+/* line 636, /usr/share/nginx/html/game/src/style/game.less */
+.game #game #map-canvas {
+  position: relative;
+}
+/* line 639, /usr/share/nginx/html/game/src/style/game.less */
+.game #game #game-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 645, /usr/share/nginx/html/game/src/style/game.less */
+.game .bottom-controller {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+/* line 648, /usr/share/nginx/html/game/src/style/game.less */
+.game .bottom-controller .fas {
+  width: 40px;
+  line-height: 40px;
+  text-align: left;
+  color: white;
+  float: left;
+  opacity: 0.3;
+  cursor: pointer;
+}
+/* line 656, /usr/share/nginx/html/game/src/style/game.less */
+.game .bottom-controller .fas.active {
+  opacity: 0.7;
+}
+/* line 659, /usr/share/nginx/html/game/src/style/game.less */
+.game .bottom-controller .fas.right {
+  float: right;
+  text-align: right;
+}
+/* line 665, /usr/share/nginx/html/game/src/style/game.less */
+.game .controller {
+  overflow: hidden;
+  color: white;
+  height: 40px;
+  position: relative;
+}
+/* line 670, /usr/share/nginx/html/game/src/style/game.less */
+.game .controller .time {
+  float: left;
+  line-height: 1rem;
+  text-align: left;
+}
+/* line 674, /usr/share/nginx/html/game/src/style/game.less */
+.game .controller .time span {
+  display: block;
+  font-size: 1.5rem;
+}
+/* line 679, /usr/share/nginx/html/game/src/style/game.less */
+.game .controller .score {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.1s linear;
+}
+/* line 688, /usr/share/nginx/html/game/src/style/game.less */
+.game .controller .score.active {
+  transform: scale(1.5);
+}
+/* line 692, /usr/share/nginx/html/game/src/style/game.less */
+.game .controller .lives {
+  float: right;
+  font-size: 2rem;
+  animation: lives 1s linear infinite;
+}
+@keyframes lives {
+  /* line 697, /usr/share/nginx/html/game/src/style/game.less */
+  70% {
+    transform: scale(0.8);
+  }
+}
+/* line 701, /usr/share/nginx/html/game/src/style/game.less */
+.game .controller .lives > span {
+  color: white;
+  font-family: Arial;
+}
+/* line 704, /usr/share/nginx/html/game/src/style/game.less */
+.game .controller .lives > span.inactive {
+  opacity: 0.5;
+}
